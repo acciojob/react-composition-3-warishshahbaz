@@ -1,5 +1,6 @@
 .tooltip {
   width: 100px;
+  min-width: fit-content;
   padding: 22px 22px;
   background-color: red;
   color: white;
