@@ -1,13 +1,38 @@
-
-import React from "react";
-import './../styles/App.css';
+import React, { useState } from "react";
+import "./../styles/App.css";
+import Tooltip from "./Tooltip";
 
 const App = () => {
+  const [state, setState] = useState();
+  const [toggle, setToggle] = useState(false);
+  const handleMouseEnter = (text) => {
+    console.log("Entering");
+    setState(text);
+    setToggle(true);
+  };
+  const handleMouseLeave = () => {
+    console.log("Leaveing");
+    setToggle(false);
+  };
   return (
     <div>
-        {/* Do not remove the main div */}
-    </div>
-  )
-}
+      <h3
+        onMouseEnter={() => handleMouseEnter(" This is the tooltip")}
+        onMouseLeave={handleMouseLeave}
+      >
+        Hover over me
+      </h3>
+      <p
+        onMouseEnter={() => handleMouseEnter("This is another tooltip")}
+        onMouseLeave={handleMouseLeave}
+      >
+        Hover over me to see another tooltip
+      </p>
+      {toggle ? <Tooltip text={state} /> : ""}
 
-export default App
+      {/* Do not remove the main div */}
+    </div>
+  );
+};
+
+export default App;
