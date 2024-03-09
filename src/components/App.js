@@ -16,12 +16,12 @@ const App = () => {
   };
   return (
     <div>
-      <h3
+      <h2
         onMouseEnter={() => handleMouseEnter(" This is the tooltip")}
         onMouseLeave={handleMouseLeave}
       >
         Hover over me
-      </h3>
+      </h2>
       <p
         onMouseEnter={() => handleMouseEnter("This is another tooltip")}
         onMouseLeave={handleMouseLeave}
