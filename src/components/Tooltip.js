@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./../styles/App.css";
 
 const Tooltip = ({ text, children }) => {
   const [visible, setVisible] = useState(false);
