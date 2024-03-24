@@ -15,22 +15,14 @@ const App = () => {
     setToggle(false);
   };
   return (
-    <div>
-      <h2
-        onMouseEnter={() => handleMouseEnter(" This is the tooltip")}
-        onMouseLeave={handleMouseLeave}
-      >
-        Hover over me
-      </h2>
-      <p
-        onMouseEnter={() => handleMouseEnter("This is another tooltip")}
-        onMouseLeave={handleMouseLeave}
-      >
-        Hover over me to see another tooltip
-      </p>
-      {toggle ? <Tooltip text={state} /> : ""}
+    <div className="App">
+      <Tooltip text="This is a tooltip">
+        <h2>Hover over me</h2>
+      </Tooltip>
 
-      {/* Do not remove the main div */}
+      <Tooltip text="This is another tooltip">
+        <p>Hover over me too</p>
+      </Tooltip>
     </div>
   );
 };
