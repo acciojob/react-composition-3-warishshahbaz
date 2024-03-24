@@ -3,17 +3,6 @@ import React, { useState } from "react";
 import Tooltip from "./Tooltip";
 
 const App = () => {
-  const [state, setState] = useState();
-  const [toggle, setToggle] = useState(false);
-  const handleMouseEnter = (text) => {
-    console.log("Entering");
-    setState(text);
-    setToggle(true);
-  };
-  const handleMouseLeave = () => {
-    console.log("Leaveing");
-    setToggle(false);
-  };
   return (
     <div className="App">
       <Tooltip text="This is a tooltip">
