@@ -1,38 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import "./../styles/App.css";
 import Tooltip from "./Tooltip";
-import "../styles/App.css";
-
 const App = () => {
-  const [state, setState] = useState();
-  const [toggle, setToggle] = useState(false);
-  const handleMouseEnter = (text) => {
-    console.log("Entering");
-    setState(text);
-    setToggle(true);
-  };
-  const handleMouseLeave = () => {
-    console.log("Leaveing");
-    setToggle(false);
-  };
   return (
     <div>
-      <h3
-        onMouseEnter={() => handleMouseEnter(" This is the tooltip")}
-        onMouseLeave={handleMouseLeave}
-      >
-        Hover over me
-      </h3>
-      <p
-        onMouseEnter={() => handleMouseEnter("This is another tooltip")}
-        onMouseLeave={handleMouseLeave}
-      >
-        Hover over me to see another tooltip
+      <h2 class="tooltip">
+        <Tooltip text="This is a tooltip">Hover over me</Tooltip>
+      </h2>
+      <br />
+      <p class="tooltip">
+        <Tooltip text="This is another tooltip">
+          Hover over me to see another tooltip
+        </Tooltip>
       </p>
-      {toggle ? <Tooltip text={state} /> : ""}
-
-      {/* Do not remove the main div */}
     </div>
   );
 };
-
 export default App;

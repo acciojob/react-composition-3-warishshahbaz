@@ -1,29 +1,30 @@
 .App {
-  display: flex;
-  flex-direction: column;
+  font-family: sans-serif;
+  text-align: center;
+}
+div {
+  padding: 20px;
 }
 .tooltip {
   position: relative;
   display: inline-block;
-  width: fit-content;
-  background-color: #e01717;
+  border-bottom: 1px dotted black;
+  cursor: pointer;
 }
-
-.tooltiptext {
+.tooltip .tooltiptext {
   visibility: hidden;
-  position: relative;
-  background-color: #e01717;
+  width: 120px;
+  background-color: red;
   color: #fff;
   text-align: center;
-  padding: 5px 10px;
   border-radius: 6px;
-  bottom: 100%; /* Position the tooltip above the text */
-  left: 20%;
-
-  transform: translateX(-50%);
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
 }
-
 .tooltip:hover .tooltiptext {
   visibility: visible;
-  margin-left: 42px;
 }
